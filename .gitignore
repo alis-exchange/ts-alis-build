@@ -128,3 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Deno files
+npm/
+
+# VSCode
+.vscode/launch.json
