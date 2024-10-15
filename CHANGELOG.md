@@ -1,9 +1,14 @@
-# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.3...v) (2024-10-15)
+# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.4...v) (2024-10-15)
 
 
 ### Bug Fixes
 
 * explicitly add peer dependencies ([3a503a7](https://github.com/alis-exchange/ts-alis-build/commit/3a503a7f0dd7b7b6087c30474153c774403ff618))
+
+
+### Features
+
+* add documentation on usage ([f422260](https://github.com/alis-exchange/ts-alis-build/commit/f422260ebe5500d23c200ae57627ffb9b18f9012))
 
 
 
