@@ -27,6 +27,12 @@ await build({
     bugs: {
       url: "https://github.com/alis-exchange/ts-alis-build/issues",
     },
+    dependencies: {
+      "@alis-build/google-common-protos": "latest",
+    },
+    peerDependencies: {
+      "google-protobuf": "latest",
+    },
   },
   postBuild() {
     Deno.copyFileSync("LICENSE", "npm/LICENSE");
