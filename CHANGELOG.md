@@ -1,4 +1,8 @@
-# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.4...v) (2024-10-15)
+# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.5...v) (2024-10-23)
+
+
+
+## [0.0.5](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.4...v0.0.5) (2024-10-23)
 
 
 ### Bug Fixes
@@ -9,6 +13,7 @@
 ### Features
 
 * add documentation on usage ([f422260](https://github.com/alis-exchange/ts-alis-build/commit/f422260ebe5500d23c200ae57627ffb9b18f9012))
+* add duration utils ([1719cf8](https://github.com/alis-exchange/ts-alis-build/commit/1719cf8a928fa3feef7279a02613c08d9a0c54f5))
 
 
 
