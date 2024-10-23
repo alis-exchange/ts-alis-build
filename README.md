@@ -68,6 +68,32 @@ moneyObj.setNanos(200000000);
 money.parse(moneyObj)
 ```
 
+### Duration
+
+1. `Duration` - Custom Duration class to handle duration calculations.
+
+```typescript
+const duration = new duration.Duration({ hours: 1, minutes: 30, seconds: 30 });
+```
+
+2. `encode` - Converts a `Duration` to a `google.protobuf.Duration` object.
+
+```typescript
+const duration = new duration.Duration({ hours: 1, minutes: 30, seconds: 30 });
+
+duration.encode()
+```
+
+1. `parse` - Parses a `google.protobuf.Duration` object to a `Duration`.
+
+```typescript
+const durationObj = new Duration();
+durationObj.setSeconds(5400);
+
+duration.parse(durationObj)
+```
+
+
 ### Strings
 
 1. `snakeCaseToCamelCase`
