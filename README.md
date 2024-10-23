@@ -11,7 +11,7 @@ npm install @alis-build/utils
 ## Usage
 
 ```typescript
-import { strings, numbers, time, money } from "@alis-build/utils";
+import { strings, numbers, time, money, duration } from "@alis-build/utils";
 ```
 
 ### Time
