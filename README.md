@@ -110,3 +110,84 @@ duration.parse(durationObj)
 12. `pascalCaseToCamelCase`
 13. `toTitleCase`
 14. `toConstantCase`
+
+### Enums
+
+1. `getAllEnumKeys` - Returns all enum keys from a given enum.
+
+```typescript
+import { getAllEnumKeys } from "@alis-build/utils/enums";
+
+enum MyEnum {
+  FIRST = 1,
+  SECOND = 2,
+  THIRD = 3,
+}
+
+const allEnumKeys = getAllEnumKeys(MyEnum);
+
+console.log(allEnumKeys); // ["FIRST", "SECOND", "THIRD"]
+```
+
+2. `getAllEnumValues` - Returns all enum values from a given enum.
+
+```typescript
+import { getAllEnumValues } from "@alis-build/utils/enums";
+
+enum MyEnum {
+  FIRST = 1,
+  SECOND = 2,
+  THIRD = 3,
+}
+
+const allEnumValues = getAllEnumValues(MyEnum);
+
+console.log(allEnumValues); // [1, 2, 3]
+```
+
+3. `getAllEnumEntries` - Returns all enum entries (key-value pairs) from a given enum.
+
+```typescript
+import { getAllEnumEntries } from "@alis-build/utils/enums";
+
+enum MyEnum {
+  FIRST = 1,
+  SECOND = 2,
+  THIRD = 3,
+}
+
+const allEnumEntries = getAllEnumEntries(MyEnum);
+
+console.log(allEnumEntries); // [["FIRST", 1], ["SECOND", 2], ["THIRD", 3]]
+```
+
+4. `getEnumKeyByValue` - Returns the enum key for a given value.
+
+```typescript
+import { getEnumKeyByValue } from "@alis-build/utils/enums";
+
+enum MyEnum {
+  FIRST = 1,
+  SECOND = 2,
+  THIRD = 3,
+}
+
+const enumKey = getEnumKeyByValue(MyEnum, 2);
+console.log(enumKey); // "SECOND"
+```
+
+5. `getEnumValueByKey` - Returns the enum value for a given key.
+
+```typescript
+import { getEnumValueByKey } from "@alis-build/utils/enums";
+
+enum MyEnum {
+  FIRST = 1,
+  SECOND = 2,
+  THIRD = 3,
+}
+
+const enumValue = getEnumValueByKey(MyEnum, "SECOND");
+
+console.log(enumValue); // 2
+```
