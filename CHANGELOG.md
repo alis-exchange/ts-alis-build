@@ -1,4 +1,13 @@
-# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.5...v) (2024-10-23)
+# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.6...v) (2025-05-08)
+
+
+
+## [0.0.6](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.5...v0.0.6) (2025-05-08)
+
+
+### Features
+
+* **enums:** add enum utility functions ([3c2e70c](https://github.com/alis-exchange/ts-alis-build/commit/3c2e70c6182c23ccb5c07071187277f4e7b0aef2))
 
 
 
