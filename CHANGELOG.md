@@ -1,4 +1,13 @@
-# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.6...v) (2025-05-08)
+# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.7...v) (2025-08-04)
+
+
+
+## [0.0.7](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.6...v0.0.7) (2025-08-04)
+
+
+### Bug Fixes
+
+* **money:** update encode function ([f87a834](https://github.com/alis-exchange/ts-alis-build/commit/f87a83460b5d9c854b337ed23873b425a0a5fbb3))
 
 
 
