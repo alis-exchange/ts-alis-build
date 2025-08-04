@@ -1,5 +1,4 @@
 import Money from "npm:@alis-build/google-common-protos@latest/google/type/money_pb.js";
-import { modf } from "../numbers/index.ts";
 
 /**
  * Parse a google.type.Money instance into a number
@@ -22,26 +21,60 @@ export const parse = (money: Money.Money): number | null => {
 /**
  * Encode a number into a google.type.Money instance
  *
- * @param currency {string} - The currency code
- * @param value {number} - The number to encode
- * @returns {Money | null} The encoded Money instance, or null if the input is nullish
+ * NOTE: This function has limitations due to JavaScript's native floating-point
+ * precision. It will throw an error for values outside the safe integer range
+ * (`Number.MAX_SAFE_INTEGER`). For high-precision financial calculations,
+ * using a dedicated decimal library is recommended.
+ *
+ * @param currency The 3-letter ISO 4217 code (e.g., "USD").
+ * @param value The monetary amount as a JS number (e.g., -1.75).
+ * @returns A google.type.Money protobuf message.
+ * @throws {RangeError} If the value is outside JavaScript's safe integer range.
+ * @throws {Error} If an impossible state with mismatched signs occurs.
  */
 export const encode = (currency: string, value: number): Money.Money | null => {
-  if (!currency || !value) {
+  // Trim any whitespaces in the currency
+  currency = currency.trim();
+
+  // Ensure both currency and value are provided
+  if (!currency || value === undefined || value === null) {
     return null;
   }
 
-  const [units, nanos] = modf(value);
+  // Prevent precision loss by checking if the value is in a safe range.
+  if (value > Number.MAX_SAFE_INTEGER || value < Number.MIN_SAFE_INTEGER) {
+    throw new RangeError(
+      "Input value is outside the safe integer range and will lose precision."
+    );
+  }
 
-  const rawNanos = nanos * 1e9;
-  const absNanosString = rawNanos?.toString()?.split(".")[0];
-  const absNanos = absNanosString ? parseInt(absNanosString) : 0;
+  // Extract the whole-unit part, truncating toward zero.
+  let units = Math.trunc(value);
 
+  // Calculate the fractional part in nanos and round it.
+  let nanos = Math.round((value - units) * 1e9);
+
+  // Handle carry-over if rounding pushed nanos to a full unit.
+  if (nanos === 1_000_000_000) {
+    units += 1;
+    nanos = 0;
+  } else if (nanos === -1_000_000_000) {
+    units -= 1;
+    nanos = 0;
+  }
+
+  // Ensure the signs of units and nanos are consistent.
+  if ((units > 0 && nanos < 0) || (units < 0 && nanos > 0)) {
+    throw new Error(
+      `Impossible state: units (${units}) and nanos (${nanos}) have mismatched signs.`
+    );
+  }
+
+  // 6) Build and return the protobuf message.
   const money = new Money.Money();
   money.setCurrencyCode(currency);
   money.setUnits(units);
-  money.setNanos(absNanos);
-
+  money.setNanos(nanos);
   return money;
 };
 

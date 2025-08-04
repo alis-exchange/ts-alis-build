@@ -1,8 +1,7 @@
 import {
   assertEquals,
   assertExists,
-} from "https://deno.land/std@0.192.0/testing/asserts.ts";
-// import Duration from "npm:@alis-build/google-common-protos@latest/google/protobuf/duration_pb.js";
+} from "https://deno.land/std/testing/asserts.ts";
 import { Duration, parse, encode } from "./index.ts";
 import type { TimeUnits } from "./index.ts";
 
