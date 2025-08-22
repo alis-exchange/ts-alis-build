@@ -1,8 +1,9 @@
-# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.8...v) (2025-08-22)
+# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.9...v) (2025-08-22)
 
 
 ### Features
 
+* **promises:** add Deferred and RetryableDeferred classes with detailed usage examples in README ([a22b8f0](https://github.com/alis-exchange/ts-alis-build/commit/a22b8f01fa45dfbde94b524c511c98a4d92f83b9))
 * **promises:** add Deferred promise support ([88f012f](https://github.com/alis-exchange/ts-alis-build/commit/88f012fc333944485503c3980d15160aaf6dc9b5))
 
 
