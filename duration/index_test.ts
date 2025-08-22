@@ -1,7 +1,4 @@
-import {
-  assertEquals,
-  assertExists,
-} from "https://deno.land/std/testing/asserts.ts";
+import { assertEquals, assertExists } from "@std/assert";
 import { Duration, parse, encode } from "./index.ts";
 import type { TimeUnits } from "./index.ts";
 

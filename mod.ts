@@ -3,5 +3,6 @@ import * as strings from "./strings/index.ts";
 import * as time from "./time/index.ts";
 import * as duration from "./duration/index.ts";
 import * as enums from "./enums/index.ts";
+import * as promises from "./promises/index.ts";
 
-export { money, strings, time, duration, enums };
+export { money, strings, time, duration, enums, promises };

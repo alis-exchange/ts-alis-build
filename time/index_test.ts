@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+import { assertEquals } from "@std/assert";
 import { parse, formatDistance, encodeDate, encodeTimestamp } from "./index.ts";
 import GoogleTypeDate from "npm:@alis-build/google-common-protos@latest/google/type/date_pb.js";
 import Timestamp from "npm:@alis-build/google-common-protos@latest/google/protobuf/timestamp_pb.js";

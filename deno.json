@@ -8,8 +8,8 @@
   "license": "MIT",
   "imports": {
     "@alis-build/google-common-protos": "npm:@alis-build/google-common-protos@^1.7.0",
-    "@std/assert": "jsr:@std/assert@^1.0.13",
-    "google-protobuf": "npm:google-protobuf@^3.21.4"
+    "@std/assert": "jsr:@std/assert@^1.0.14",
+    "google-protobuf": "npm:google-protobuf@^4.0.0"
   },
   "nodeModulesDir": "auto"
 }

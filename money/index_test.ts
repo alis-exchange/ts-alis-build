@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+import { assertEquals } from "@std/assert";
 import Money from "npm:@alis-build/google-common-protos@latest/google/type/money_pb.js";
 import { parse, encode, format } from "./index.ts";
 
