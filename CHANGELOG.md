@@ -1,4 +1,9 @@
-# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.7...v) (2025-08-04)
+# [](https://github.com/alis-exchange/ts-alis-build/compare/v0.0.8...v) (2025-08-22)
+
+
+### Features
+
+* **promises:** add Deferred promise support ([88f012f](https://github.com/alis-exchange/ts-alis-build/commit/88f012fc333944485503c3980d15160aaf6dc9b5))
 
 
 
