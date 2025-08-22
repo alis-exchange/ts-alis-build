@@ -15,6 +15,7 @@ await build({
   shims: {
     deno: true,
   },
+  test: false,
   package: {
     name: "@alis-build/utils",
     version: version,

@@ -29,7 +29,7 @@ export class Deferred<T, E = Error> {
   private _error?: E;
   private _settledAt?: Date;
   private _createdAt: Date = new Date();
-  private timeoutHandle?: number;
+  private timeoutHandle?: ReturnType<typeof setTimeout>;
   private onCancelCallbacks: Array<() => void> = [];
 
   constructor() {

@@ -11,7 +11,7 @@ npm install @alis-build/utils
 ## Usage
 
 ```typescript
-import { strings, numbers, time, money, duration } from "@alis-build/utils";
+import { money, strings, time, duration, enums, promises } from "@alis-build/utils";
 ```
 
 ### Time
@@ -190,4 +190,91 @@ enum MyEnum {
 const enumValue = getEnumValueByKey(MyEnum, "SECOND");
 
 console.log(enumValue); // 2
+```
+
+### Promises
+
+1. `Deferred` - Deferred represents a promise that can be resolved or rejected externally. Unlike a regular Promise where the resolution logic must be provided at construction time, a Deferred allows you to create a promise and control its settlement from outside.
+
+```typescript
+import { Deferred, DeferredState } from "@alis-build/utils/promises";
+
+const deferred = new Deferred<string>();
+
+// The promise can be awaited elsewhere
+async function waitForResult() {
+  const result = await deferred.promise;
+  console.log('Got result:', result);
+}
+
+// And resolved from anywhere
+setTimeout(() => {
+  deferred.resolve('Hello, World!');
+}, 1000);
+```
+
+Timeout support:
+
+```typescript
+const deferred = new Deferred<string>();
+
+// Reject after 5 seconds with default error
+deferred.setTimeout(5000);
+
+// Or with custom timeout error
+deferred.setTimeout(5000, new Error('Operation timed out'));
+
+// The timeout is cleared if resolved before it expires
+deferred.resolve('Completed in time!');
+```
+
+Cancellation support:
+
+```typescript
+const deferred = new Deferred<string>();
+
+// Register cancellation callbacks
+deferred.onCancel(() => {
+  console.log('Deferred was cancelled');
+  // Cleanup resources
+});
+
+// Cancel with optional reason
+deferred.cancel('User cancelled the operation');
+```
+
+State inspection:
+
+```typescript
+const deferred = new Deferred<string>();
+
+console.log(deferred.isPending);   // true
+console.log(deferred.isSettled);   // false
+
+deferred.resolve('done');
+
+console.log(deferred.isResolved);  // true
+console.log(deferred.isSettled);   // true
+console.log(deferred.value);       // 'done'
+console.log(deferred.duration);    // Time in ms from creation to settlement
+```
+
+2. `RetryableDeferred` - RetryableDeferred extends `Deferred` to add automatic retry capabilities for operations that may fail transiently.
+
+```typescript
+import { RetryableDeferred } from "@alis-build/utils/promises";
+
+// Will retry up to 3 times with 1 second delay between attempts
+const deferred = new RetryableDeferred(
+  somePromise(),
+  3,     // maxAttempts
+  1000   // retryDelay in ms
+);
+
+try {
+  const data = await deferred.promise;
+  console.log('Success after', deferred.attemptCount, 'attempts');
+} catch (error) {
+  console.log('Failed after', deferred.attemptCount, 'attempts');
+}
 ```
