@@ -1,30 +1,30 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@std/assert@^1.0.14": "1.0.14",
-    "jsr:@std/internal@^1.0.10": "1.0.10",
+    "jsr:@std/assert@^1.0.16": "1.0.16",
+    "jsr:@std/internal@^1.0.12": "1.0.12",
     "npm:@alis-build/google-common-protos@*": "1.7.0",
     "npm:@alis-build/google-common-protos@^1.7.0": "1.7.0",
     "npm:@alis-build/google-common-protos@latest": "1.7.0",
-    "npm:google-protobuf@4": "4.0.0"
+    "npm:google-protobuf@^4.0.1": "4.0.1"
   },
   "jsr": {
-    "@std/assert@1.0.14": {
-      "integrity": "68d0d4a43b365abc927f45a9b85c639ea18a9fab96ad92281e493e4ed84abaa4",
+    "@std/assert@1.0.16": {
+      "integrity": "6a7272ed1eaa77defe76e5ff63ca705d9c495077e2d5fd0126d2b53fc5bd6532",
       "dependencies": [
         "jsr:@std/internal"
       ]
     },
-    "@std/internal@1.0.10": {
-      "integrity": "e3be62ce42cab0e177c27698e5d9800122f67b766a0bea6ca4867886cbde8cf7"
+    "@std/internal@1.0.12": {
+      "integrity": "972a634fd5bc34b242024402972cd5143eac68d8dffaca5eaa4dba30ce17b027"
     }
   },
   "npm": {
     "@alis-build/google-common-protos@1.7.0": {
       "integrity": "sha512-HYyAJKqsgoqmjq+XUrC60IgIL+IizY14stNeJ0+6InmSDpDCAjzoDcRp2C2vNJ61Trl1vRm9ONvEcssZfJksuQ=="
     },
-    "google-protobuf@4.0.0": {
-      "integrity": "sha512-b8wmenhUMf2WNL+xIJ/slvD/hEE6V3nRnG86O2bzkBrMweM9gnqZE1dfXlDjibY3aXJXDNbAHepevYyQ7qWKsQ=="
+    "google-protobuf@4.0.1": {
+      "integrity": "sha512-0I4mx3UtAwpcc8l9Ds5gHcwV2FyPdwvxxBcor8LusE4b6PjoFxEngZRBepjvuQ4B0eZ2iu/Vezh8oRsnpJ9UGA=="
     }
   },
   "redirects": {
@@ -210,9 +210,9 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@^1.0.14",
+      "jsr:@std/assert@^1.0.16",
       "npm:@alis-build/google-common-protos@^1.7.0",
-      "npm:google-protobuf@4"
+      "npm:google-protobuf@^4.0.1"
     ]
   }
 }
